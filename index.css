@@ -8,13 +8,18 @@
 }
 .header{
     /* background-color: #f8f3f3; */
-    height: auto;
-    position: relative;
+    height: 80px;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    border: 2px solid black;
-    box-shadow: inset -1px 3px 20px black;
+    box-shadow: 0 15px 40px -20px rgba(40,44,63,.15);
+    z-index: 1000;
+    will-change: transform;
+    transform: translateZ(0);
+    transition: transform .3s ease;
+    top: 0;
+    background-color: #fff;
 }
 .logo_box, .search{
     display:flex;
@@ -25,9 +30,10 @@
     height: auto;
     position: relative;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     width: 100%;
     padding: 20px;
+    align-items: center;
 }
 .logo_img{
     height: 80px;
@@ -58,7 +64,8 @@
 }
 .nav-items{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
+    flex: 1;
 }
 ul{
     width: 500px;
@@ -68,6 +75,13 @@ ul{
     align-items: center;
     text-decoration: none;
     list-style-type: none;
+}
+.nav-items>ul>li{
+    height: 100%;
+}
+.nav-items>ul>li:hover{
+    color: #fc8019;
+    cursor: pointer;
 }
 ul>li:last-child:after { content: icon; }
 footer {
@@ -142,6 +156,13 @@ footer {
     padding-right: 50px;
     margin-left: calc(10% + 36px);
     margin-right: calc(10% + 36px);
+    padding-top: 100px;
+}
+.nav-container{
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: calc(10% + 36px);
+    margin-right: calc(10% + 36px);
 }
 .offer_div{
     position: absolute;
@@ -192,4 +213,41 @@ footer {
     overflow-wrap: break-word;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+}
+._3HusE {
+    display: block;
+    padding-left: 5px;
+    margin-left: 5px;
+    color: #686b78;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.loc_div{
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: 30px;
+    max-width: 300px;
+    height: 30px;
+    cursor: pointer;
+    margin-bottom: -1px;
+    padding-right: 10px;
+}
+.other_txt{
+    display: block;
+    min-width: 30px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-decoration-line: underline;
+}
+.other_txt::after{
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #3d4152;
+}
+.other_div{
+    font-weight: 700;
 }
